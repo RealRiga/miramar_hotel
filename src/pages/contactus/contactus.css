@@ -1,0 +1,245 @@
+:root {
+  --PrimaryColor: hsl(26, 93%, 50%);
+  --HoverColor: hsl(26, 90%, 42%);
+  --whiteColor: hsl(0, 0%, 100%);
+  --blackColor: hsl(0, 0%, 18%);
+  --textColor: hsl(240, 1%, 48%);
+  --greyBg: hsl(0, 0%, 96%);
+  --box-shadow: 0 2px 8px 2px rgba(178, 178, 178, 0.189);
+}
+
+.contactUs .secContainer {
+  padding-top: 5rem;
+}
+.contactUs .secContainer .mainContent {
+  display: flex;
+  justify-content: space-between;
+}
+.contactUs .secContainer .mainContent .contactForm {
+  width: 50%; /* Adjust width for contact form */
+  max-width: 600px; /* Ensure maximum width for responsiveness */
+  background-color: var(--whiteColor);
+  border-radius: 1rem;
+  box-shadow: var(--box-shadow);
+  padding: 2rem;
+}
+.contactUs .secContainer .mainContent .contactForm .secIntro {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.contactUs .secContainer .mainContent .contactForm .secIntro .secTitle {
+  font-size: 2rem;
+  color: var(--PrimaryColor);
+}
+.contactUs .secContainer .mainContent .contactForm .secIntro p {
+  color: var(--textColor);
+  font-size: 1rem;
+}
+.contactUs .secContainer .mainContent .contactForm .formGroup {
+  margin-bottom: 1.5rem;
+}
+.contactUs .secContainer .mainContent .contactForm .formGroup label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--textColor);
+}
+.contactUs .secContainer .mainContent .contactForm .formGroup .inputContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.contactUs .secContainer .mainContent .contactForm .formGroup .inputContainer input,
+.contactUs .secContainer .mainContent .contactForm .formGroup .inputContainer textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--greyBg);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  color: var(--blackColor);
+}
+.contactUs .secContainer .mainContent .contactForm .formGroup .inputContainer input:focus,
+.contactUs .secContainer .mainContent .contactForm .formGroup .inputContainer textarea:focus {
+  outline: none;
+  border-color: var(--PrimaryColor);
+  box-shadow: 0 0 0 2px rgba(26, 237, 128, 0.3);
+}
+.contactUs .secContainer .mainContent .contactForm .formGroup .inputContainer textarea {
+  resize: vertical;
+  min-height: 100px;
+  margin-top: 0.5rem;
+  padding: 0.75rem;
+}
+.contactUs .secContainer .mainContent .contactForm .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0.75rem;
+  background: var(--PrimaryColor);
+  color: var(--whiteColor);
+  font-weight: 600;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.contactUs .secContainer .mainContent .contactForm .btn .icon {
+  margin-left: 0.5rem;
+  font-size: 1.25rem;
+}
+.contactUs .secContainer .mainContent .contactForm .btn:hover {
+  background: var(--HoverColor);
+}
+.contactUs .secContainer .mainContent .rightContent {
+  width: 50%; /* Adjust width for right content */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 2rem; /* Adjust margin between form and right content */
+}
+.contactUs .secContainer .mainContent .rightContent .contactInfo,
+.contactUs .secContainer .mainContent .rightContent .socialLinks {
+  background-color: var(--whiteColor);
+  border-radius: 1rem;
+  box-shadow: var(--box-shadow);
+  padding: 1rem;
+  margin-bottom: 2rem; /* Adjust margin at the bottom of right content */
+}
+.contactUs .secContainer .mainContent .rightContent .contactInfo .detailItem {
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--textColor);
+}
+.contactUs .secContainer .mainContent .rightContent .contactInfo .detailItem strong {
+  font-weight: 600;
+}
+.contactUs .secContainer .mainContent .rightContent .socialLinks {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.contactUs .secContainer .mainContent .rightContent .socialLinks h3 {
+  font-size: 1.5rem;
+  color: var(--PrimaryColor);
+  margin-bottom: 1rem;
+}
+.contactUs .secContainer .mainContent .rightContent .socialLinks .socialLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-bottom: 0.5rem;
+  background-color: var(--PrimaryColor);
+  color: var(--whiteColor);
+  border-radius: 50%;
+  font-size: 1.25rem;
+  transition: background-color 0.3s ease;
+}
+.contactUs .secContainer .mainContent .rightContent .socialLinks .socialLink:hover {
+  background-color: var(--HoverColor);
+}
+.contactUs .secContainer .mainContent .rightContent .socialLinks .socialLink i {
+  font-size: 1rem;
+}
+.contactUs .mapContainer {
+  width: 100%; /* Adjust width for map */
+  max-width: 600px; /* Ensure maximum width for responsiveness */
+  margin-top: 2rem; /* Adjust margin between map and other content */
+  border-radius: 1rem;
+  box-shadow: var(--box-shadow);
+}
+.contactUs .mapContainer .mapOverlay {
+  position: relative;
+  width: 100%;
+  height: 300px; /* Adjust height of the map container */
+  overflow: hidden;
+  border-radius: 1rem;
+}
+.contactUs .mapContainer .mapOverlay h3 {
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--PrimaryColor);
+  color: var(--whiteColor);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 0;
+}
+.contactUs .mapContainer .mapOverlay iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 1rem;
+}
+.contactUs .mapContainer .contactInfo {
+  width: calc(50% - 1rem); /* Adjusted width to leave space between map and social links */
+  margin-left: 1rem; /* Adjusted margin-left to create space between map and social links */
+}
+.contactUs .mapContainer .contactInfo .contactDetails {
+  background: var(--whiteColor);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: var(--box-shadow);
+  margin-bottom: 1rem;
+}
+.contactUs .mapContainer .contactInfo .contactDetails .detailItem {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: var(--textColor);
+}
+.contactUs .mapContainer .contactInfo .contactDetails .detailItem strong {
+  font-weight: 600;
+}
+.contactUs .mapContainer .contactInfo .socialLinks {
+  display: flex;
+  justify-content: flex-end;
+}
+.contactUs .mapContainer .contactInfo .socialLinks .socialLink {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin-left: 0.5rem;
+  background: var(--PrimaryColor);
+  color: var(--whiteColor);
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+.contactUs .mapContainer .contactInfo .socialLinks .socialLink:hover {
+  background: var(--HoverColor);
+}
+.contactUs .mapContainer .contactInfo .socialLinks .socialLink:first-child {
+  margin-left: 0;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+  .secContainer .mainContent {
+    flex-direction: column;
+  }
+  .secContainer .mainContent .contactForm,
+  .secContainer .mainContent .mapContainer,
+  .secContainer .mainContent .contactInfo {
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 1rem;
+  }
+  .secContainer .mainContent .mapOverlay {
+    font-size: 0.875rem;
+  }
+  .secContainer .mainContent .secIntro .secTitle {
+    font-size: 1.5rem;
+  }
+  .secContainer .mainContent .formGroup .inputContainer input,
+  .secContainer .mainContent .formGroup .inputContainer textarea {
+    font-size: 0.875rem;
+  }
+  .secContainer .mainContent .btn .icon {
+    font-size: 1rem;
+  }
+}/*# sourceMappingURL=contactus.css.map */

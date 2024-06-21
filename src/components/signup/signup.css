@@ -1,0 +1,201 @@
+:root {
+  --PrimaryColor: hsl(26, 93%, 50%);
+  --HoverColor: hsl(26, 90%, 42%);
+  --whiteColor: hsl(0, 0%, 100%);
+  --blackColor: hsl(0, 0%, 18%);
+  --textColor: hsl(240, 1%, 48%);
+  --whiteColorDeam: hsl(0, 0%, 93%);
+  --greyBg: hsl(0, 0%, 96%);
+  --greyText: rgb(190, 190, 190);
+  --inputColor: hsl(330, 12%, 97%);
+  --box-shadow: 0 2px 8px 2px rgba(178, 178, 178, 0.189);
+}
+
+.signup .secContainer {
+  margin-top: 5rem;
+}
+.signup .secContainer .secIntro {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.signup .secContainer .secIntro .secTitle {
+  font-size: 2rem;
+  color: var(--PrimaryColor);
+}
+.signup .secContainer .secIntro p {
+  color: var(--textColor);
+  font-size: 1rem;
+}
+.signup .secContainer .mainContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.signup .secContainer .mainContent .signupForm {
+  background: var(--whiteColor);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: var(--box-shadow);
+  width: 100%;
+  max-width: 400px;
+}
+.signup .secContainer .mainContent .signupForm .formGroup {
+  margin-bottom: 1.5rem;
+}
+.signup .secContainer .mainContent .signupForm .formGroup label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--textColor);
+}
+.signup .secContainer .mainContent .signupForm .formGroup .inputContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.signup .secContainer .mainContent .signupForm .formGroup .inputContainer input {
+  width: 100%;
+  padding: 0.75rem;
+  padding-right: 2.5rem; /* Adjust to accommodate the icon */
+  border: 1px solid var(--greyBg);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  color: var(--blackColor);
+}
+.signup .secContainer .mainContent .signupForm .formGroup .inputContainer input:focus {
+  outline: none;
+  border-color: var(--PrimaryColor);
+  box-shadow: 0 0 0 2px rgba(26, 237, 128, 0.3);
+}
+.signup .secContainer .mainContent .signupForm .formGroup .inputContainer .icon {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 1.25rem;
+  color: var(--textColor);
+}
+.signup .secContainer .mainContent .signupForm .formGroup .inputContainer .error {
+  color: red;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+.signup .secContainer .mainContent .signupForm .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0.75rem;
+  background: var(--PrimaryColor);
+  color: var(--whiteColor);
+  font-weight: 600;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.signup .secContainer .mainContent .signupForm .btn .icon {
+  margin-left: 0.5rem;
+  font-size: 1.25rem;
+}
+.signup .secContainer .mainContent .signupForm .btn:hover {
+  background: var(--HoverColor);
+}
+.signup .secContainer .mainContent .signupForm .loginRedirect {
+  margin-top: 1rem;
+  text-align: center;
+  color: var(--textColor);
+}
+.signup .secContainer .mainContent .signupForm .loginRedirect a {
+  color: var(--PrimaryColor);
+  font-weight: 600;
+  text-decoration: none;
+}
+.signup .secContainer .mainContent .signupForm .loginRedirect a:hover {
+  text-decoration: underline;
+}
+.signup .secContainer .mainContent .signupForm .backToHome {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 1rem;
+  background: var(--greyBg);
+  color: var(--textColor);
+  font-weight: 600;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.signup .secContainer .mainContent .signupForm .backToHome span {
+  margin-right: 0.5rem;
+}
+.signup .secContainer .mainContent .signupForm .backToHome:hover {
+  background: var(--greyText);
+  color: var(--whiteColor);
+}
+
+/* Responsive Media Queries */
+/* Extra Small Devices (phones, 600px and down) */
+@media (max-width: 600px) {
+  .signup .secContainer {
+    padding: 0 1rem;
+  }
+  .signup .secContainer .secIntro .secTitle {
+    font-size: 1.5rem;
+  }
+  .signup .secContainer .secIntro p {
+    font-size: 0.875rem;
+  }
+  .signup .secContainer .mainContent .signupForm {
+    padding: 1.5rem;
+  }
+}
+/* Small Devices (portrait tablets and large phones, 600px to 768px) */
+@media (min-width: 601px) and (max-width: 768px) {
+  .signup .secContainer {
+    margin-top: 4rem;
+  }
+  .signup .secContainer .secIntro .secTitle {
+    font-size: 1.75rem;
+  }
+  .signup .secContainer .secIntro p {
+    font-size: 0.95rem;
+  }
+  .signup .secContainer .mainContent .signupForm {
+    padding: 1.75rem;
+  }
+}
+/* Medium Devices (landscape tablets, 768px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .signup .secContainer {
+    margin-top: -5rem;
+  }
+  .signup .secContainer .secIntro .secTitle {
+    font-size: 2rem;
+  }
+  .signup .secContainer .secIntro p {
+    font-size: 1rem;
+  }
+  .signup .secContainer .mainContent .signupForm {
+    padding: 2rem;
+  }
+}
+/* Large Devices (desktops, 1025px and up) */
+@media (min-width: 1025px) {
+  .signup .secContainer {
+    margin-top: -5.5rem;
+  }
+  .signup .secContainer .secIntro .secTitle {
+    font-size: 2.25rem;
+  }
+  .signup .secContainer .secIntro p {
+    font-size: 1.1rem;
+  }
+  .signup .secContainer .mainContent .signupForm {
+    padding: 2.5rem;
+  }
+}/*# sourceMappingURL=signup.css.map */

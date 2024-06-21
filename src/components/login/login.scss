@@ -1,0 +1,272 @@
+:root {
+    --PrimaryColor: hsl(26, 93%, 50%);
+    --HoverColor: hsl(26, 90%, 42%);
+    --whiteColor: hsl(0, 0%, 100%);
+    --blackColor: hsl(0, 0%, 18%);
+    --textColor: hsl(240, 1%, 48%);
+    --whiteColorDeam: hsl(0, 0%, 93%);
+    --greyBg: hsl(0, 0%, 96%);
+    --greyText: rgb(190, 190, 190);
+    --inputColor: hsl(330, 12%, 97%);
+    --box-shadow: 0 2px 8px 2px rgba(178, 178, 178, 0.189);
+  }
+  
+  .login {
+    .secContainer {
+      .secIntro {
+        text-align: center;
+        margin-bottom: 2rem;
+  
+        .secTitle {
+          font-size: 2rem;
+          color: var(--PrimaryColor);
+        }
+  
+        p {
+          color: var(--textColor);
+          font-size: 1rem;
+        }
+      }
+  
+      .mainContent {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+  
+        .loginForm {
+          background: var(--whiteColor);
+          padding: 2rem;
+          border-radius: 1rem;
+          box-shadow: var(--box-shadow);
+          width: 100%;
+          max-width: 400px;
+  
+          .formGroup {
+            margin-bottom: 1.5rem;
+            position: relative;
+  
+            label {
+              display: block;
+              font-weight: 600;
+              margin-bottom: 0.5rem;
+              color: var(--textColor);
+            }
+  
+            .inputContainer {
+              position: relative;
+              display: flex;
+              align-items: center;
+  
+              input {
+                width: 100%;
+                padding: 0.75rem;
+                padding-right: 2.5rem; /* Adjust to accommodate the icon */
+                border: 1px solid var(--greyBg);
+                border-radius: 0.5rem;
+                font-size: 1rem;
+                color: var(--blackColor);
+  
+                &:focus {
+                  outline: none;
+                  border-color: var(--PrimaryColor);
+                  box-shadow: 0 0 0 2px rgba(26, 93%, 50%, 0.3);
+                }
+              }
+  
+              .icon {
+                position: absolute;
+                right: 0.75rem;
+                cursor: pointer;
+                font-size: 1.25rem;
+                color: var(--textColor);
+              }
+            }
+  
+            .error {
+              position: absolute;
+              bottom: -1.5rem;
+              left: 0;
+              color: red;
+              font-size: 0.875rem;
+            }
+          }
+  
+          .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 0.75rem;
+            background: var(--PrimaryColor);
+            color: var(--whiteColor);
+            font-weight: 600;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+  
+            .icon {
+              margin-left: 0.5rem;
+              font-size: 1.25rem;
+            }
+  
+            &:hover {
+              background: var(--HoverColor);
+            }
+          }
+  
+          .signupRedirect {
+            margin-top: 1rem;
+            text-align: center;
+            color: var(--textColor);
+  
+            a {
+              color: var(--PrimaryColor);
+              font-weight: 600;
+              text-decoration: none;
+  
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+  
+          .backToHome {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 0.75rem;
+            margin-top: 1rem;
+            background: var(--greyBg);
+            color: var(--textColor);
+            font-weight: 600;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+  
+            span {
+              margin-right: 0.5rem;
+            }
+  
+            &:hover {
+              background: var(--greyText);
+              color: var(--whiteColor);
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  /* Responsive Media Queries */
+  
+  /* Extra Small Devices (phones, 600px and down) */
+  @media (max-width: 600px) {
+    .login {
+      .secContainer {
+        padding: 0 1rem;
+  
+        .secIntro {
+          .secTitle {
+            font-size: 1.5rem;
+          }
+  
+          p {
+            font-size: 0.875rem;
+          }
+        }
+  
+        .mainContent {
+          .loginForm {
+            padding: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+  
+  /* Small Devices (portrait tablets and large phones, 600px to 768px) */
+  @media (min-width: 601px) and (max-width: 768px) {
+    .login {
+      .secContainer {
+        margin-top: 4rem;
+  
+        .secIntro {
+          .secTitle {
+            font-size: 1.75rem;
+          }
+  
+          p {
+            font-size: 0.95rem;
+          }
+        }
+  
+        .mainContent {
+          .loginForm {
+            padding: 1.75rem;
+          }
+        }
+      }
+    }
+  }
+  
+  /* Medium Devices (landscape tablets, 768px to 1024px) */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .login {
+      .secContainer {
+        margin-top: -5rem;
+  
+        .secIntro {
+          .secTitle {
+            font-size: 2rem;
+          }
+  
+          p {
+            font-size: 1rem;
+          }
+        }
+  
+        .mainContent {
+          .loginForm {
+            padding: 2rem;
+          }
+        }
+      }
+    }
+  }
+  
+  /* Large Devices (desktops, 1025px and up) */
+  @media (min-width: 1025px) {
+    .login {
+      .secContainer {
+        margin-top: -5.5rem;
+  
+        .secIntro {
+          .secTitle {
+            font-size: 2.25rem;
+          }
+  
+          p {
+            font-size: 1.1rem;
+          }
+        }
+  
+        .mainContent {
+          .loginForm {
+            padding: 2.5rem;
+          }
+        }
+      }
+    }
+  }
+  
+  /* Responsive Media Queries for Form Errors */
+  @media (max-width: 768px) {
+    .error {
+      font-size: 0.75rem;
+      margin-top: 0.25rem;
+    }
+  }
+  
