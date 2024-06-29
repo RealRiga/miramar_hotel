@@ -1,20 +1,20 @@
 import React from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import "./app.css";
-import About from "./components/about/About";
 import { AuthProvider } from "./components/auth/authContext";
-import Blog from "./components/blog/Blog";
 import Footer from "./components/footer/Footer";
 import Login from "./components/login/login";
 import Navbar from "./components/navbar/Navbar";
 import Offer from "./components/offers/Offers";
-import Popular from "./components/popular/Popular";
 import Signup from "./components/signup/signup";
-import Booking from "./pages/booking/bookings";
+import About from "./pages/about/About";
+import Blog from "./pages/blog/Blog";
 import ContactUs from "./pages/contactus/contact";
 import Home from "./pages/home/Home";
-import Room from "./components/rooms/rooms";
-import RestoBar from "./components/resto&bar/resto&bar";
+import Profile from "./pages/profile/profile";
+import Room from "./pages/rooms/rooms";
+import Booking from "./components/booking/bookings";
+import Bookings from "./components/booking/bookings";
 
 const App = () => {
   return (
@@ -27,7 +27,6 @@ const App = () => {
               <>
                 <Navbar />
                 <Home />
-                <Footer />
               </>
             }
           />
@@ -72,31 +71,22 @@ const App = () => {
             }
           />
           <Route
-            path="/restobar"
+            path="/Booking"
             element={
               <>
                 <Navbar />
-                <RestoBar />
+                <Bookings />
                 <Footer />
               </>
             }
           />
+
           <Route
             path="/offers"
             element={
               <>
                 <Navbar />
                 <Offer />
-                <Footer />
-              </>
-            }
-          />
-          <Route
-            path="/popular"
-            element={
-              <>
-                <Navbar />
-                <Popular />
                 <Footer />
               </>
             }
@@ -113,6 +103,7 @@ const App = () => {
           />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
       </Router>
     </AuthProvider>

@@ -1,12 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import "./contactus.css"; // Import SCSS module
+import { submitFeedback } from '../../apiService/api'
 
 const ContactUs = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setFormData(prevState => ({
+      ...prevState,
+      [id]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await submitFeedback(formData);
+      console.log('Feedback submitted successfully:', response);
+      // Reset form fields after successful submission
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      console.error('Error submitting feedback:', error);
+    }
+  };
+
   return (
     <section className="contactUs section">
       <div className="secContainer">
         <div className="mainContent">
-          <form className="contactForm">
+          <form className="contactForm" onSubmit={handleSubmit}>
             <div className="secIntro">
               <h2 className="secTitle">Contact Us</h2>
               <p>Please fill out the form below to get in touch with us.</p>
@@ -15,14 +42,26 @@ const ContactUs = () => {
             <div className="formGroup">
               <label htmlFor="name">Name</label>
               <div className="inputContainer">
-                <input type="text" id="name" placeholder="Enter your name" />
+                <input
+                  type="text"
+                  id="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  placeholder="Enter your name"
+                />
               </div>
             </div>
 
             <div className="formGroup">
               <label htmlFor="email">Email</label>
               <div className="inputContainer">
-                <input type="email" id="email" placeholder="Enter your email" />
+                <input
+                  type="email"
+                  id="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="Enter your email"
+                />
               </div>
             </div>
 
@@ -31,6 +70,8 @@ const ContactUs = () => {
               <div className="inputContainer">
                 <textarea
                   id="message"
+                  value={formData.message}
+                  onChange={handleChange}
                   placeholder="Enter your message"
                 ></textarea>
               </div>

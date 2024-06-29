@@ -6,6 +6,9 @@ import "./about.css";
 import img3 from "../../assets/climbing.jpg";
 import img from "../../assets/customer.png";
 import img2 from "../../assets/mountain.jpg";
+import img4 from "../../assets/hotel3.jpg";
+
+
 
 import video from "../../assets/video.mp4"
 
@@ -17,9 +20,38 @@ const About = () => {
 
 
   return (
-    <section className="about section">
+    <section className="about section grid">
       <div className="secContainer">
-        <h2 className="title">Why Hikings?</h2>
+      <div className="hotelAboutUs flex">
+          <div className="imageContainer container">
+            <img src={img4} alt="Hiking Image" />
+          </div>
+          <div className="content">
+            <h2 className="title">About Our Hotel</h2>
+            <p>
+              Welcome to our luxurious retreat in the heart of nature. Our hotel
+              offers an unparalleled experience where modern comfort meets
+              tranquility of the wilderness. Nestled amidst breathtaking mountain
+              views and lush greenery, we pride ourselves on providing
+              world-class hospitality and personalized service to our guests.
+            </p>
+            <p>
+              Whether you're here for a relaxing getaway, a romantic escape, or
+              an adventure-filled holiday, our hotel caters to every need with
+              meticulously designed rooms, exceptional dining options, and
+              state-of-the-art facilities. Immerse yourself in the beauty of
+              nature while enjoying the comforts of home at our esteemed
+              establishment.
+            </p>
+            <p>
+              Our commitment to sustainability and community engagement drives us
+              to preserve the environment and support local initiatives. Join us
+              on a journey of luxury, relaxation, and exploration at our hotel,
+              where every moment is crafted to exceed your expectations.
+            </p>
+          </div>
+        </div><br/><br/>
+        <h2 className="title">Why Choose US?</h2>
 
         <div className="mainContent container grid">
           <div data-aos="fade-up" data-aos-duration="2000" className="singleItem">

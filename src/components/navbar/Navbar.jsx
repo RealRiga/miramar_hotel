@@ -13,10 +13,10 @@ const Navbar = () => {
   const location = useLocation();
   const [active, setActive] = useState("navBar");
   const [show, setShow] = useState(true);
+  const [showBookings, setShowBookings] = useState(false); // State for Bookings link visibility
   const showNav = () => setActive("navBar activeNavbar");
   const removeNav = () => setActive("navBar");
 
-  // Background color based on scroll or route
   const [transparent, setTransparent] = useState("header");
 
   const addBg = () => {
@@ -31,11 +31,14 @@ const Navbar = () => {
     window.addEventListener("scroll", addBg);
     if (!localStorage.getItem("token")) {
       setShow(false);
+      setShowBookings(false); // Ensure bookings link is hidden on logout
+    } else {
+      setShow(true);
+      setShowBookings(true); // Show bookings link when logged in
     }
     return () => window.removeEventListener("scroll", addBg);
-  }, [location.pathname]);
+  }, [location.pathname, isLoggedIn]);
 
-  // Manage active link state
   const [activeLink, setActiveLink] = useState("Home");
 
   const handleLinkClick = (link) => {
@@ -48,6 +51,7 @@ const Navbar = () => {
     localStorage.removeItem("userDetails");
     setIsLoggedIn(false);
     toast.success("Logged out successfully", { autoClose: 2000 });
+    window.location.reload(); // Reload the page after logout
   };
 
   return (
@@ -99,17 +103,20 @@ const Navbar = () => {
                 Rooms
               </NavLink>
             </li>
-            <li className="navItem">
-              <NavLink
-                to="/restobar"
-                className={`navLink ${
-                  activeLink === "Resto&Bar" ? "activeLink" : ""
-                }`}
-                onClick={() => handleLinkClick("Resto&Bar")}
-              >
-                Resto & Bar
-              </NavLink>
-            </li>
+
+            {showBookings && (
+              <li className="navItem">
+                <NavLink
+                  to="/bookings"
+                  className={`navLink ${
+                    activeLink === "Bookings" ? "activeLink" : ""
+                  }`}
+                  onClick={() => handleLinkClick("Bookings")}
+                >
+                  Bookings
+                </NavLink>
+              </li>
+            )}
 
             <li className="navItem">
               <NavLink
@@ -146,10 +153,10 @@ const Navbar = () => {
               )}
               {show && (
                 <div className="container flex">
-                  <a href="/" className="avatarWrapper">
-                    <img src={""} />
+                  <Link to="/profile" className="avatarWrapper">
+                    <img src={""} alt="" />
                     <FaUserCircle className="avatarIcon" />
-                  </a>
+                  </Link>
                   <li className="logoutLink">
                     <NavLink
                       to="/"

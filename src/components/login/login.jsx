@@ -1,13 +1,14 @@
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { BsArrowRightShort, BsEye, BsEyeSlash } from "react-icons/bs";
-import { MdPerson } from "react-icons/md"; // Updated import for person icon
-import { login } from '../../apiService/api';
-import './login.css';
+// src/components/Login/Login.js
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { BsArrowRightShort, BsEye, BsEyeSlash } from 'react-icons/bs';
+import { MdPerson } from 'react-icons/md';
+import { userLogin } from '../../apiService/api'; // Updated import
+import './login.scss';
 
 const Login = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
@@ -15,15 +16,14 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     const newErrors = {};
-    if (!username) newErrors.username = "Username is required";
-    if (!password) newErrors.password = "Password is required";
+    if (!username) newErrors.username = 'Username is required';
+    if (!password) newErrors.password = 'Password is required';
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
     } else {
       try {
-        const response = await login({ username, password });
-        localStorage.setItem('token', response.data.token);
+        await userLogin({ username, password }); // Use userLogin function from authService
         navigate('/'); // Redirect to home or dashboard
       } catch (error) {
         if (error.response && error.response.data) {
@@ -55,7 +55,7 @@ const Login = () => {
                   onChange={(e) => setUsername(e.target.value)}
                   placeholder="Enter your username"
                 />
-                <MdPerson className="icon" /> {/* Updated icon */}
+                <MdPerson className="icon" />
                 {errors.username && <span className="error">{errors.username}</span>}
               </div>
             </div>
@@ -63,7 +63,7 @@ const Login = () => {
               <label htmlFor="password">Password</label>
               <div className="inputContainer">
                 <input
-                  type={showPassword ? "text" : "password"}
+                  type={showPassword ? 'text' : 'password'}
                   id="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
@@ -83,7 +83,7 @@ const Login = () => {
             <p className="signupRedirect">
               Don't have an account? <Link to="/signup">Signup</Link>
             </p>
-            <button className="backToHome" onClick={() => navigate("/")}>
+            <button className="backToHome" onClick={() => navigate('/')}>
               <span>&#8592;</span> Back to Home
             </button>
           </form>

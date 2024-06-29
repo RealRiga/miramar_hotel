@@ -2,7 +2,7 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import React, { useEffect } from "react";import { BsArrowRightShort } from "react-icons/bs";
 import "./blog.css";
-
+import {Link} from "react-router-dom"
 import img from "../../assets/hotel1.jpg";
 import img2 from "../../assets/hotel2.jpg";
 import img3 from "../../assets/hotel3.jpg";
@@ -63,10 +63,10 @@ const Blog = () => {
                   <h3 data-aos="fade-up" data-aos-duration="3000">{title}</h3>
                   <p data-aos="fade-up" data-aos-duration="4000">{desc}</p>
                 </div>
-                <a href="#" className="flex" data-aos="fade-up" data-aos-duration="4500">
+                <Link to="/blog" className="flex" data-aos="fade-up" data-aos-duration="4500">
                   Read More
                   <BsArrowRightShort className="icon" />
-                </a>
+                </Link>
               </div>
               )
             })

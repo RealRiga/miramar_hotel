@@ -174,5 +174,5 @@ input {
 
 ::-webkit-scrollbar-thumb {
     background: var(--PrimaryColor);
-    border-radius: 10px;
+    border-radius: 0px;
 }
